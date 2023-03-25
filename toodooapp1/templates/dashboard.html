@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{%block content%}
+<h1>TooDoo</h1>  
+<div>
+    <a href="{% url 'createtoodoo' %}">Create toodoo </a>
+    <div>
+        {% for items in toodoo%}
+            <div><a href="{% url 'toodooinfo' items.id %}">{{items.id}}</a> -- {{items.toodooitem}}</div>
+        {% endfor%}
+    </div>
+</div>
+{%endblock content%}

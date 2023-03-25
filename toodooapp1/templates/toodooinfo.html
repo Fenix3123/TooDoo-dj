@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{%block content%}
+<div> 
+    <div> 
+        <h1> edit toodoo here </h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit"/>
+        </form>
+        <form method="POST" action="{% url 'toodoodelete' toodoo.id%}">
+            {% csrf_token %}
+            <input type="submit" value="Delete"/>
+        </form>
+    </div>
+</div>
+{%endblock content%}
