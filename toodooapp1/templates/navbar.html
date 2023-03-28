@@ -12,7 +12,19 @@
         <a href="/dashboard">
             go back to dashboard
         </a>
+
+        
         <hr>
+
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout'%}">
+          Logout
+        </a>
+        {% else %}
+        <a href="{% url 'loginRegistration'%}">
+          Login
+        </a>
+        {% endif %}
     </main>
   </body>
 </html>
